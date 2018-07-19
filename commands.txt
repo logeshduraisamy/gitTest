@@ -2,3 +2,8 @@
 | eval _time=strptime(Date, "%m-%d-%Y")
 | timechart span=1d values(leaves) as leave
 
+
+
+| inputlookup employee_leaves1.csv 
+| eval _time=strptime(Date, "%m-%d-%Y")
+| timechart span=7d values(leaves) as leave
