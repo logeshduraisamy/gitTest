@@ -1,0 +1,4 @@
+| inputlookup employee_leaves.csv 
+| eval _time=strptime(Date, "%m-%d-%Y")
+| timechart span=1d values(leaves) as leave
+
